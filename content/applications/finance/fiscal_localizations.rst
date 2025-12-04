@@ -67,7 +67,7 @@ Fiscal localization modules are available for the countries listed below.
 - Comoros
 - Congo
 - Costa Rica
-- Croatia
+- :doc:`Croatia <fiscal_localizations/croatia>`
 - Cyprus
 - Czech Republic
 - Democratic Republic of the Congo
@@ -160,6 +160,7 @@ Fiscal localization modules are available for the countries listed below.
    fiscal_localizations/canada
    fiscal_localizations/chile
    fiscal_localizations/colombia
+   fiscal_localizations/croatia
    fiscal_localizations/denmark
    fiscal_localizations/ecuador
    fiscal_localizations/egypt
