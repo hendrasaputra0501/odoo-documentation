@@ -38,8 +38,9 @@ Under the :guilabel:`Redirect URL` section, select :guilabel:`Web` as the platfo
 is subject to change depending on the URL used to log in to the database.
 
 .. note::
-   The documentation about the :ref:`web.base.url <domain-name/web-base-url>` explains how to freeze
-   a unique URL. It is also possible to add different redirect URLs on the Microsoft app.
+   The documentation about the :ref:`web.base.url <domain-name/existing/db-map/web-base-url>`
+   explains how to freeze a unique URL. It is also possible to add different redirect URLs on the
+   Microsoft app.
 
 After the URL has been added to the field, :guilabel:`Register` the application, so it is created.
 

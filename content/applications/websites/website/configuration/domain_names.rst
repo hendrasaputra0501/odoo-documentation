@@ -2,148 +2,155 @@
 Domain names
 ============
 
-Domain names are text-based addresses identifying online locations, such as websites. They provide a
-more memorable and recognizable way for people to navigate the internet than numerical IP addresses.
+Domain names serve as easily recognizable labels for online locations such as websites, translating
+numerical IP addresses that are difficult to remember into readable, memorable web addresses.
 
-**Odoo Online** and **Odoo.sh** databases use a **subdomain** of the `odoo.com` **domain** by
-default (e.g., `mycompany.odoo.com`).
+:doc:`Odoo Online <../../../../administration/odoo_online>` and :doc:`Odoo.sh
+<../../../../administration/odoo_sh>` databases use a subdomain of the `odoo.com` domain by default
+(e.g., `mycompany.odoo.com`).
 
-However, you can use a custom domain name instead by :ref:`registering a free domain name
-<domain-name/register>` (only available for Odoo Online databases) or by :ref:`configuring a
-domain name you already own <domain-name/existing>`.
+However, you can :ref:`register a free domain name <domain-name/register>` on Odoo Online or
+:ref:`use a domain name you own <domain-name/existing>`.
 
 .. seealso::
-   - `Odoo Tutorials: Register a free domain name [video]
+   - `Odoo Tutorial: Register a free domain name [video]
      <https://www.odoo.com/slides/slide/register-a-free-domain-name-1663>`_
    - `Magic Sheet - Website domain configuration [PDF]
      <https://drive.google.com/drive/folders/1sXbp7sC6TKG2v-8hcRAMhA6ftKmRxba_>`_
 
 .. _domain-name/register:
 
-Register a free domain name with Odoo
-=====================================
+Register a free domain name
+===========================
 
-To register a one-year free domain name for your Odoo Online database, sign in to your account and
-go to the `database manager <https://www.odoo.com/my/databases>`_. Click the :icon:`fa-gear`
-(:guilabel:`gear`) button next to the database name and select :icon:`fa-globe` :guilabel:`Domain
-Names`.
+To register a one-year free domain name for an Odoo Online database:
 
-.. image:: domain_names/domain-names.png
-   :alt: Accessing a database's domain names configuration
+#. Open the `database manager <https://www.odoo.com/my/databases>`_.
+#. Click the database name and select :icon:`fa-globe` :guilabel:`Domain Names`.
+#. Search for the desired domain name and check its availability.
+#. Select the desired domain name, fill in the :guilabel:`Domain Owner` form, and click
+   :guilabel:`Register`. The domain name is directly linked to the database.
 
-Search for the desired domain name and check its availability.
+   .. important::
+      A verification email from `noreply@domainnameverification.net` will be sent to the email
+      address provided. Verifying the email address is necessary to keep the domain active and
+      receive the renewal quote before expiration.
 
-.. image:: domain_names/domain-search.png
-   :alt: Searching for an available domain name
+#. :ref:`Map the domain name to the website <domain-name/existing/website-map>`.
 
-.. tip::
-   Ensure the Website app is installed if the domain name registration option does not appear.
+.. admonition:: Terms and conditions
 
-Select the desired domain name, fill in the :guilabel:`Domain Owner` form, and click
-:guilabel:`Register`. The chosen domain name is directly linked to the database.
+   The domain name registration is free for the first year. After this period, Odoo will continue to
+   manage the domain in partnership with **Gandi.net**, the domain name registrar, and you will be
+   charged `Gandi.net's renewal rate <https://www.gandi.net/en/domain>`_. Odoo sends a renewal
+   quotation every year to the email address mentioned in the :guilabel:`Domain Owner` form several
+   weeks before the expiration date of the domain. The domain is renewed automatically when the
+   quotation is confirmed.
 
-.. image:: domain_names/domain-owner.png
-   :alt: Filling in the domain owner information
-
-Next, you should :ref:`map your domain name to your Odoo website <domain-name/website-map>`.
-
-.. important::
-   A verification email from `noreply@domainnameverification.net` will be sent to the email address
-   provided in the :guilabel:`Domain Owner` form. It is essential to verify your email address to
-   keep the domain active and receive the renewal quote before expiration.
-
-The domain name registration is free for the first year. After this period, Odoo will continue to
-manage the domain in partnership with **Gandi.net**, the domain name registrar, and you will be
-charged `Gandi.net's renewal rate <https://www.gandi.net/en/domain>`_. Odoo sends a renewal
-quotation every year to the email address mentioned in the :guilabel:`Domain Owner` form several
-weeks before the expiration date of the domain. The domain is renewed automatically when the
-quotation is confirmed.
-
-.. note::
    - The offer is only available for **Odoo Online** databases.
-   - The offer is limited to **one** domain name per client.
-   - The offer is limited to the registration of a **new** domain name.
+   - The offer is limited to **one domain name per client**.
+   - The offer is limited to the registration of a **new domain name**.
    - The offer is available to *One App Free* plans. Ensure that your website contains enough
      original content for Odoo to verify that your request is legitimate and respects `Odoo's
      Acceptable Use Policy <https://www.odoo.com/acceptable-use>`_. Given the high number of
      requests, it can take Odoo several days to review them.
 
-.. _domain-name/register-dns:
+.. _domain-name/register/dns:
 
 DNS records
 -----------
 
-To manage your free domain name :abbr:`DNS (domain name system)` records, open the `database manager
-<https://www.odoo.com/my/databases>`_, click the :icon:`fa-gear` (:guilabel:`gear`) button next to
-the database name, select :icon:`fa-globe` :guilabel:`Domain Names`, and click :guilabel:`DNS`.
+To manage a free domain name's :abbr:`DNS (domain name system)` records:
 
-- :guilabel:`A`: the A record holds the IP address of the domain. It is automatically created and
-  **cannot** be edited or deleted.
-- :guilabel:`CNAME`: CNAME records forward one domain or subdomain to another domain. One is
-  automatically created to map the `www.` subdomain to the database. If the database is renamed, the
-  CNAME record **must** also be renamed.
-- :guilabel:`MX`: MX records instruct servers on where to deliver emails.
-- :guilabel:`TXT`: TXT records can be used for different purposes (e.g., to verify domain name
-  ownership).
+#. Open the `database manager <https://www.odoo.com/my/databases>`_.
+#. Click the database name and select :icon:`fa-globe` :guilabel:`Domain Names`.
+#. Click :guilabel:`DNS`.
 
-Any modification to the DNS records can take up to **72 hours** to propagate worldwide on all
-servers.
+.. tip::
+   - :guilabel:`A`: the A record holds the IP address of the domain. It is automatically created and
+     **cannot** be edited or deleted.
+   - :guilabel:`CNAME`: CNAME records forward one domain or subdomain to another domain. One is
+     automatically created to map the `www.` subdomain to the database. If the database is renamed,
+     the CNAME record **must** also be renamed.
+   - :guilabel:`MX`: MX records instruct servers on where to deliver emails.
+   - :guilabel:`TXT`: TXT records can be used for different purposes (e.g., to verify domain name
+     ownership).
+
+   Any modification to the DNS records can take up to **72 hours** to propagate worldwide on all
+   servers.
+
+.. _domain-name/register/subdomains:
+
+Subdomains
+----------
+
+Adding a subdomain label to a free domain name (e.g., `subdomain.yourdomain.com`) allows
+:doc:`creating multiple websites <multi_website>` or creating records in the database from
+:ref:`emails received on an alias <domain-name/register/mailbox/subdomain>` (e.g.,
+`email@subdomain.yourdomain.com`).
+
+To do so, add a CNAME record:
+
+#. Open the `database manager <https://www.odoo.com/my/databases>`_.
+#. Click the database name and select :icon:`fa-globe` :guilabel:`Domain Names`.
+#. Click :guilabel:`DNS`.
+#. Click :guilabel:`Add DNS record` and select :guilabel:`CNAME`.
+#. Enter the desired subdomain label (e.g., `subdomain`) in the :guilabel:`Name` field , the
+   original database domain with a period at the end (e.g., `mycompany.odoo.com.`) in the
+   :guilabel:`Content` field, and click :guilabel:`Add record`.
 
 .. note::
-   `Contact Odoo support <https://www.odoo.com/help>`_ if you need assistance to manage your domain
-   name.
+   To use a subdomain's address for your Odoo website, it is necessary to :ref:`map it
+   <domain-name/existing/website-map>`.
+
+.. _domain-name/register/mailbox:
 
 Mailbox
 -------
 
-The one-year free domain name offer does **not** include a mailbox. There are two options to link
-your domain name with a mailbox.
+The free domain name does **not** include a mailbox. However, there are two options to link it with
+a mailbox.
+
+.. _domain-name/register/mailbox/subdomain:
 
 Use a subdomain
 ~~~~~~~~~~~~~~~
 
-You can create a subdomain (e.g., `subdomain.yourdomain.com`) to use as an alias domain for the
-database. It allows users to create records in the database from emails received on their
-`email@subdomain.yourdomain.com` alias.
+After :ref:`creating a subdomain <domain-name/register/subdomains>`, go to the database and open
+the :guilabel:`Settings` app. Under the :guilabel:`Alias Domain` field, enter the subdomain (e.g.,
+`subdomain.yourdomain.com`), click :guilabel:`Create`, and then :guilabel:`Save`.
 
-To do so, open the `database manager <https://www.odoo.com/my/databases>`_, click the
-:icon:`fa-gear` (:guilabel:`gear`) button next to the database name and select :icon:`fa-globe`
-:guilabel:`Domain Names`. Click :guilabel:`DNS`, then :guilabel:`Add DNS record` and select
-:guilabel:`CNAME`. Next, enter the desired subdomain in the :guilabel:`Name` field (e.g.,
-`subdomain`), the original database domain with a period at the end (e.g., `mycompany.odoo.com.`) in
-the :guilabel:`Content` field, and click :guilabel:`Add record`.
-
-Then, add the alias domain as your *own domain* by clicking :guilabel:`Use my own domain`, entering
-the alias domain (e.g., `subdomain.yourdomain.com`), clicking :guilabel:`Verify`, and then
-:guilabel:`I confirm, it's done`.
-
-Finally, go to your database and open the :guilabel:`Settings`. Under the :guilabel:`Alias Domain`
-field, enter the alias domain (e.g., `subdomain.yourdomain.com`), click :guilabel:`Create`, and then
-:guilabel:`Save`.
+.. _domain-name/register/mailbox/external:
 
 Use an external email provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To use an external email provider, you should configure an MX record. To do so, open the `database
-manager <https://www.odoo.com/my/databases>`_, click the :icon:`fa-gear` (:guilabel:`gear`) button
-next to the database name and select :icon:`fa-globe` :guilabel:`Domain Names`. Click
-:guilabel:`DNS`, then :guilabel:`Add DNS record` and select :guilabel:`MX`. The values you should
-enter for the :guilabel:`Name`, :guilabel:`Content`, and :guilabel:`Priority` fields depend on the
-external email provider.
+To use an external email provider, it is necessary to add an MX record:
+
+#. Open the `database manager <https://www.odoo.com/my/databases>`_.
+#. Click the database name and select :icon:`fa-globe` :guilabel:`Domain Names`.
+#. Click :guilabel:`DNS`.
+#. Click :guilabel:`Add DNS record` and select :guilabel:`MX`.
+#. Fill in the :guilabel:`Name`, :guilabel:`Content`, and :guilabel:`Priority` fields according to
+   the external email provider.
 
 .. seealso::
    - `Google Workspace: MX record values <https://support.google.com/a/answer/174125?hl=en>`_
    - `Outlook and Exchange Online: Add an MX record for email <https://learn.microsoft.com/en-us/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider?view=o365-worldwide#add-an-mx-record-for-email-outlook-exchange-online>`_
 
+.. _domain-name/register/mailbox/external/google:
+
 Google Workspace
 ****************
 
-To use your free domain name on Gmail, register to `Google Workspace
+To use a free domain name with Gmail, register to `Google Workspace
 <https://workspace.google.com>`_.
 
 During the registration process, select :guilabel:`Set up using your existing domain` when asked to
 :guilabel:`Choose a way to set up your account`, and enter your domain (e.g., `yourdomain.com`) when
 asked :guilabel:`What's your business's domain name?`.
+
+.. _domain-name/register/mailbox/external/google/ownership:
 
 Domain ownership verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,12 +172,14 @@ Domain ownership verification
    .. image:: domain_names/workspace-verify-code.png
       :alt: Copying the TXT value on Google Workspace
 
-#. Open the `database manager <https://www.odoo.com/my/databases>`_, click the :icon:`fa-gear`
-   (:guilabel:`gear`) button next to the database name and select :icon:`fa-globe` :guilabel:`Domain
-   Names`. Click :guilabel:`DNS`, then :guilabel:`Add DNS record` and select :guilabel:`TXT`.
+#. Add a TXT record.
 
-#. Enter `@` in the :guilabel:`Name` field, paste the :guilabel:`Value` provided by Google in the
-   :guilabel:`Content` field, and click :guilabel:`Add record`.
+   #. Open the `database manager <https://www.odoo.com/my/databases>`_.
+   #. Click the database name and select :icon:`fa-globe` :guilabel:`Domain Names`.
+   #. Click :guilabel:`DNS`.
+   #. Click :guilabel:`Add DNS record` and select :guilabel:`MX`.
+   #. Enter `@` in the :guilabel:`Name` field, paste the :guilabel:`Value` provided by Google in the
+      :guilabel:`Content` field, and click :guilabel:`Add record`.
 
    .. image:: domain_names/workspace-txt.png
       :alt: Creating a TXT record to verify domain name ownership
@@ -180,6 +189,8 @@ Domain ownership verification
 .. seealso::
    `Google Workspace Admin Help: Verify your domain with a TXT record
    <https://support.google.com/a/answer/16018515>`_
+
+.. _domain-name/register/mailbox/external/google/redirect:
 
 Redirect emails to Gmail
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -209,18 +220,18 @@ Configure an existing domain name
 If you already have a domain name, you can use it for your Odoo website.
 
 .. warning::
-   To avoid potential :ref:`SSL certificate validation <domain-name/ssl>` issues, it is strongly
-   recommended to follow these five steps, in the specified order:
+   To avoid potential :ref:`SSL certificate validation <domain-name/existing/db-map/ssl>` issues, it
+   is strongly recommended to follow these five steps, in the specified order:
 
    #. Set up :ref:`URL redirections <website/pages/URL-redirection>` before transferring the domain
       name to preserve the website's SEO.
-   #. :ref:`Add a CNAME record. <domain-name/cname>`
-   #. :ref:`Redirect your naked domain name. <domain-name/naked>` (This step is optional, but
-      recommended.)
-   #. :ref:`Map your domain name to your Odoo database. <domain-name/db-map>`
-   #. :ref:`Map your domain name to your Odoo website. <domain-name/website-map>`
+   #. :ref:`Add a CNAME record <domain-name/existing/cname>`.
+   #. :ref:`Redirect your naked domain name <domain-name/existing/naked>` (this step is optional but
+      recommended).
+   #. :ref:`Map your domain name to your Odoo database <domain-name/existing/db-map>`.
+   #. :ref:`Map your domain name to your Odoo website <domain-name/existing/website-map>`.
 
-.. _domain-name/cname:
+.. _domain-name/existing/cname:
 
 Add a CNAME record
 ------------------
@@ -251,7 +262,7 @@ The specific instructions depend on your DNS hosting service.
    - `Cloudflare: Manage DNS records
      <https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/>`_
 
-.. _domain-name/naked:
+.. _domain-name/existing/naked:
 
 Redirect a naked domain
 -----------------------
@@ -268,9 +279,9 @@ to `www.yourdomain.com` is required:
 
 The specific instructions depend on your DNS hosting service. However, not all of them offer to
 redirect a naked domain with a secure HTTPS connection. If you encounter any issue, we recommend
-:ref:`using Cloudflare <domain-name/naked/cloudflare>`.
+:ref:`using Cloudflare <domain-name/existing/naked/cloudflare>`.
 
-.. _domain-name/naked/cloudflare:
+.. _domain-name/existing/naked/cloudflare:
 
 Using Cloudflare to secure and redirect a naked domain
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -304,8 +315,8 @@ Using Cloudflare to secure and redirect a naked domain
       :alt: Adding a CNAME DNS record to Cloudflare to redirect a www subdomain to an Odoo database
 
 #. Define a redirect rule to permanently redirect (301) your naked domain (e.g., `yourdomain.com`)
-   to both `http://` and `https://` by going to :menuselection:`Rules --> Create rule --> Products`,
-   and clicking :guilabel:`Create a Rule` under :guilabel:`Redirect Rules`:
+   to both `http://` and `https://` by going to :menuselection:`Rules --> Overview --> Create rule
+   --> Redirect Rule`. On that page:
 
    - Enter any :guilabel:`Rule name`.
    - Under the :guilabel:`If incoming requests match...` section, select :guilabel:`Custom filter
@@ -330,18 +341,18 @@ Using Cloudflare to secure and redirect a naked domain
    .. image:: domain_names/cloudflare-encryption.png
       :alt: Setting the encryption mode to full on Cloudflare
 
-.. _domain-name/db-map:
+.. _domain-name/existing/db-map:
 
 Map a domain name to an Odoo database
 -------------------------------------
 
 .. warning::
-   Ensure you have :ref:`added a CNAME record <domain-name/cname>` to your domain name's DNS
-   **before** mapping your domain name to your Odoo database.
+   Ensure you have :ref:`added a CNAME record <domain-name/existing/cname>` to your domain name's
+   DNS **before** mapping your domain name to your Odoo database.
 
-   Failing to do so may prevent the validation of the :ref:`SSL certificate <domain-name/ssl>` and
-   could result in a *certificate name mismatch* error. Web browsers often display this as a
-   warning, such as *"Your connection is not private"*.
+   Failing to do so may prevent the validation of the :ref:`SSL certificate
+   <domain-name/existing/db-map/ssl>` and could result in a *certificate name mismatch* error. Web
+   browsers often display this as a warning, such as *"Your connection is not private"*.
 
    If you encounter this error after mapping the domain name to your database, wait up to five
    days, as the validation may still happen. If not, you can `submit a support ticket
@@ -351,10 +362,11 @@ Map a domain name to an Odoo database
 
    .. group-tab:: Odoo Online
 
-      Open the `database manager <https://www.odoo.com/my/databases>`_, click the :icon:`fa-gear`
-      (:guilabel:`gear`) button next to the database name, select :icon:`fa-globe` :guilabel:`Domain
-      Names`, and click :guilabel:`Use my own domain`. Then, enter the domain name (e.g.,
-      `www.yourdomain.com`), click :guilabel:`Verify` and :guilabel:`I confirm, it's done`.
+      #. Open the `database manager <https://www.odoo.com/my/databases>`_.
+      #. Click the database name and select :icon:`fa-globe` :guilabel:`Domain Names`.
+      #. Click :guilabel:`Use my own domain`.
+      #. Enter the domain name (e.g.,`www.yourdomain.com`), click :guilabel:`Verify` then
+         :guilabel:`I confirm, it's done`.
 
       .. image:: domain_names/map-database-online.png
          :alt: Mapping a domain name to an Odoo Online database
@@ -370,7 +382,7 @@ Map a domain name to an Odoo database
       .. seealso::
          :ref:`Odoo.sh branches: settings tab <odoo-sh/branches/tabs/settings>`
 
-.. _domain-name/ssl:
+.. _domain-name/existing/db-map/ssl:
 
 SSL encryption (HTTPS protocol)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -380,7 +392,7 @@ as the *https://* protocol at the beginning of a web address rather than the non
 protocol.
 
 Odoo generates a separate SSL certificate for each domain :ref:`mapped to a database
-<domain-name/db-map>` using `Let's Encrypt's certificate authority and ACME protocol
+<domain-name/existing/db-map>` using `Let's Encrypt's certificate authority and ACME protocol
 <https://letsencrypt.org/how-it-works/>`_.
 
 .. note::
@@ -393,14 +405,14 @@ Odoo generates a separate SSL certificate for each domain :ref:`mapped to a data
    No SSL certificate is generated for naked domains :dfn:`(domain names without any subdomains
    or prefixes)`.
 
-.. _domain-name/web-base-url:
+.. _domain-name/existing/db-map/web-base-url:
 
 Web base URL of a database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
    If the Website app is installed on your database, skip this section and continue from the
-   :ref:`Map a domain name to a website <domain-name/website-map>` section.
+   :ref:`Map a domain name to an Odoo website <domain-name/existing/website-map>` section.
 
 The *web base URL* or root URL of a database affects your main website address and all the
 links sent to your customers (e.g., quotations, portal links, etc.).
@@ -423,22 +435,23 @@ group under Administration)`.
    website as the value (e.g., `https://www.yourdomain.com`). The URL must include the protocol
    `https://` (or `http://`) and *not* end with a slash (`/`).
 
-.. _domain-name/website-map:
+.. _domain-name/existing/website-map:
 
 Map a domain name to an Odoo website
 ------------------------------------
 
-Mapping your domain name to your website is different than mapping it to your database:
+.. note::
+   Mapping your domain name to your website is different than mapping it to your database:
 
-- It defines your domain name as the main one for your website, helping search engines to index your
-  website correctly.
-- It defines your domain name as the base URL for your database, including portal links sent by
-  email to your customers.
-- If you have multiple websites, it maps your domain name to the appropriate website.
+   - It defines your domain name as the main one for your website, helping search engines to index
+     your website correctly.
+   - It defines your domain name as the base URL for your database, including portal links sent by
+     email to your customers.
+   - If you have multiple websites, it maps your domain name to the appropriate website.
 
 Go to :menuselection:`Website --> Configuration --> Settings`. If you have multiple websites, select
-the one you want to configure. In the :guilabel:`Domain` field, enter the address of your website
-(e.g., `https://www.yourdomain.com`) and :guilabel:`Save`.
+the one you want to configure. In the :guilabel:`Domain` field, enter the URL of your website (e.g.,
+`https://www.yourdomain.com`) and :guilabel:`Save`.
 
 .. warning::
    Mapping your domain name to your Odoo website prevents Google Search from indexing your original
@@ -448,8 +461,22 @@ the one you want to configure. In the :guilabel:`Domain` field, enter the addres
    address is removed from Google Search. You can use the `Google Search Console
    <https://search.google.com/search-console/welcome>`_ to fix the issue.
 
-.. note::
-   If you have multiple websites and companies on your database, make sure to select the right
-   :guilabel:`Company` under :menuselection:`Website --> Configuration --> Settings`. Doing so
-   indicates Odoo which URL to use as the :ref:`base URL <domain-name/web-base-url>` according to
-   the company in use.
+.. tip::
+   - If you have multiple websites and companies on your database, make sure to select the right
+     :guilabel:`Company` under :menuselection:`Website --> Configuration --> Settings`. Doing so
+     indicates Odoo which URL to use as the :ref:`base URL
+     <domain-name/existing/db-map/web-base-url>` according to the company in use.
+   - When migrating from an existing website, make sure to set up the necessary :ref:`redirects
+     <website/pages/url-redirection>` before adding your domain name.
+
+.. _domain-name/existing/subdomains:
+
+Subdomains
+----------
+
+Using subdomains allows you to use a single domain name for multiple websites. To do so:
+
+#. Add a CNAME record to forward your subdomain (e.g., `subdomain.yourdomain.com`) to the address of
+   your Odoo database (e.g., `mycompany.odoo.com`).
+#. :ref:`Map the subdomain to your Odoo database <domain-name/existing/db-map>`.
+#. :ref:`Map the subdomain to your Odoo website <domain-name/existing/website-map>`.

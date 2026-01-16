@@ -486,7 +486,7 @@ HTTP
     request root URL, which in turn is used to update the ``web.base.url``
     system parameter upon a successful admin authentication. This system
     parameter is used to generate all links for the current database; see
-    :ref:`domain-name/web-base-url`.
+    :ref:`domain-name/existing/db-map/web-base-url`.
 
 
     .. warning:: proxy mode *must not* be enabled outside of a reverse proxy

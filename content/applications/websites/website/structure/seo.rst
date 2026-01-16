@@ -261,7 +261,7 @@ creates one robot.txt file available on `mydatabase.odoo.com/robots.txt`.
 
 .. note::
    Reputable bots adhere to robots.txt; others may require blocking via
-   :ref:`Cloudflare <domain-name/naked/cloudflare>` on your custom domain.
+   :ref:`Cloudflare <domain-name/existing/naked/cloudflare>` on your custom domain.
 
 Edit robots.txt
 ---------------
