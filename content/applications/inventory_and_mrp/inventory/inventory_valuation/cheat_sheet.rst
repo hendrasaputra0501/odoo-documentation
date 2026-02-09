@@ -12,6 +12,7 @@ Valuation cheat sheet
       This documentation is for Odoo 19 or later.
       :ref:`Discover why we changed. <changes-in-19>`
 
+.. _costing-methods:
 
 Costing Methods
 ===============
