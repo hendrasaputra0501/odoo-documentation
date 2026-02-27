@@ -140,29 +140,127 @@ Accounting app can create exceptions. To do so:
 
 .. _accounting/year-end/current-year-earnings:
 
-Current year's earnings
-~~~~~~~~~~~~~~~~~~~~~~~
+Current year earnings
+~~~~~~~~~~~~~~~~~~~~~
 
-Odoo uses a unique account type called **current year's earnings** to display the difference
-between the **income** and **expense** accounts.
+.. important::
+   In versions before Odoo 19, current year earnings were handled differently. For consistency in
+   your reporting history, upgrading users should revisit past fiscal years and explicitly book the
+   results that were previously handled implicitly by the system. These :ref:`manual journal entries
+   <accounting/year-end/manual-je>` should be made in chronological order. For more information on
+   why this change was made and how versions before Odoo 19 compare to versions after it, see this
+   `blog post <https://www.odoo.com/blog/business-hacks-1/how-to-manage-current-years-earnings-in-odoo-19-compared-to-previous-versions-2107>`_.
 
-.. note::
-   The chart of accounts can only contain one account of this type. By default, it is a 999999
-   account named :guilabel:`Undistributed Profits/Losses`.
+At the end of a fiscal year, a company will almost always have a net profit or a net loss that is
+calculated by summing the income and expense accounts of the profit and loss statement. Odoo
+displays the result of the year **N** as a **dynamic line** called "Undistributed Profits/Losses"
+within the trial balance and general ledger of the year **N+1**. To clear this dynamic line, create
+a :ref:`manual journal entry <accounting/year-end/manual-je>` in year **N** for the end-of-year
+result using a :ref:`Current Year Earnings type account <accounting/year-end/appropriation>`.
 
-To allocate the current year's earnings, create a new miscellaneous entry with a date set to the end
-of the fiscal year to book them to any equity account.
+.. _accounting/year-end/trial-balance:
 
-Then, verify whether the current year's earnings on the **balance sheet** correctly show a zero
-balance. If so, a :guilabel:`Hard Lock date` can be set to the last day of the fiscal year in
-:menuselection:`Accounting --> Accounting --> Lock Dates`.
+Balancing the trial balance
+***************************
 
-.. tip::
-   The :guilabel:`Hard Lock date` field is irreversible and is intended to ensure data
-   inalterability required to comply with accounting regulations in certain countries. If such
-   compliance is not applicable, setting this field may not be necessary. However, if required, the
-   date should only be set once it is confirmed to be correct, as it **cannot be changed or
-   overridden**, regardless of access rights.
+A trial balance is, by default, always balanced (meaning the sum of debits equals the sum of
+credits) because it records the sum of all journal entries which are themselves balanced. However,
+**balance sheet accounts** (assets, liability, and equity) carry over their balances from previous
+fiscal years, whereas **profit and loss accounts** (income, expense, and
+:ref:`accounting/year-end/appropriation>` accounts) reset to zero at the start of a new fiscal year.
+This difference in account behavior would leave the trial balance unbalanced if it were not for the
+dynamic line - "Undistributed Profits/Losses" - that balances this difference temporarily until an
+explicit, :ref:`manual journal entry <accounting/year-end/manual-je>` is made to appropriate the
+profit or the loss. Posting an explicit entry to a :ref:`current year earnings account
+<accounting/year-end/appropriation>` at year-end "neutralizes" the dynamic line and ensures the
+trial balance is balanced by actual journal items.
+
+.. _accounting/year-end/appropriation:
+
+Appropriation (current year earnings) accounts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Appropriation accounts (also called by their account type, current year earnings) are used to
+allocate a company's profit or loss, whether that allocation is to reserves, dividends, or any other
+destination. There are several key pieces of information to know about these accounts and how they
+function:
+
+- **Annual reset**: Like the income and expense accounts that are also found on the profit
+  and loss statement, allocation accounts have their opening balances reset at the beginning of a
+  fiscal year.
+- **P&L presentation**: These accounts appear at the bottom of the **profit and loss** statement.
+- **No profit effect**: Unlike income and expense accounts, these accounts **do not affect** the
+  calculation of the net profit.
+- **Balance sheet counterparts**: Only the *counterparts* of the journal items that debit or credit
+  appropriations accounts (e.g., the dividends payable or the reserve accounts) appear on the
+  balance sheet. This maintains a strict separation between the process of distributing profit and
+  the resulting liabilities or equity.
+
+.. _accounting/year-end/manual-je:
+
+Manual journal entry
+^^^^^^^^^^^^^^^^^^^^
+
+To roll up income and expenses and replace the dynamic "Undistributed Profits/Losses" line with an
+explicit journal item that balances the trial balance, create a manual journal entry by following
+these steps:
+
+#. Go to :menuselection:`Accounting --> Accounting --> Journal Entries`.
+#. Click the :guilabel:`New` button.
+#. Add a :guilabel:`Reference` such as `Annual Closing [YEAR]`, replacing `[YEAR]` with the current
+   year.
+#. Set the :guilabel:`Accounting Date` to the end of the fiscal year in which the profit or loss was
+   incurred.
+#. In the :guilabel:`Journal Items` tab, add a line for the full amount of the profit or loss. This
+   amount is available on the dynamic :guilabel:`Undistributed Profits/Losses` line of the trial
+   balance **for the year after the profit or loss was incurred**. In the case of recording a
+   profit, this journal item should debit an appropriation (current year earnings) account. In the
+   case of recording a loss, this journal item should credit an appropriation (current year
+   earnings) account.
+#. Add one or more additional lines that credit (in the case of a profit) or debit (in the case of a
+   loss) one or more destination accounts to balance the journal entry. Depending on the
+   localization and the situation, the destination account(s) will vary, but they could be other
+   appropriation (current year earnings) accounts, equity accounts, current liabilities accounts, or
+   a combination thereof. The sum of these lines must balance the line from the previous step.
+#. Click :guilabel:`Post`.
+
+.. example::
+   Depending on the localization and the situation, the accounts involved will vary. The following
+   examples illustrate three different potential journal entries using accounts from the Belgian
+   :abbr:`GAAP (generally accepted accounting principles)` / :abbr:`CSA-WVV (code des sociétés et
+   des associations - wetboek van vennootschappen en verenigingen)`. As each example illustrates a
+   different option for handling a profit, all three debit a different allocation (current year
+   earnings) account and credit a different destination account (two equity accounts and one current
+   liabilities account).
+
+   .. list-table::
+      :header-rows: 1
+      :stub-columns: 1
+
+      * - **Destination**
+        - **Profit and loss appropriation account (Debit)**
+        - **Balance sheet destination account (Credit)**
+      * - **Legal reserve**
+        - 692000 Appropriations to Legal Reserve
+        - 130000 Legal Reserve
+      * - **Carried Forward**
+        - 693000 Profits to Be Carried Forward
+        - 140000 Profit Brought Forward
+      * - **Dividends**
+        - 694000 Compensation for Contributions
+        - 471000 Dividends - Current Financial Period
+
+Preparing for the Indirect Cash Flow Statement
+**********************************************
+
+This new structure prevents "polluting" the generic P&L. By isolating result allocations in dedicated accounts
+that the P&L report ignores for net income calculation, Odoo ensures a "pure" **Net Income** figure. This is
+vital for the **Indirect Cash Flow Statement**, which uses Net Income as its starting point to adjust for non-cash
+movements.
+
+.. important::
+   **Action Required**: For consistency in your reporting history, it is recommended to revisit past fiscal years
+   and explicitly book the results that were previously handled implicitly by the system.
 
 .. _accounting/year-end/annual-closing:
 

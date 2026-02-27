@@ -125,7 +125,8 @@ consolidation:
 
    - *Equity accounts:* Use the historical exchange rate.
 
-   - *Profit & Loss (P&L) accounts:* Use the average exchange rate.
+   - *Profit and loss (P&L) accounts (including :ref:`appropriation accounts
+     <accounting/year-end/appropriation>`:* Use the weighted average exchange rate.
 
    - *Balance sheet accounts (excluding equity):* Use the closing exchange rate.
 
