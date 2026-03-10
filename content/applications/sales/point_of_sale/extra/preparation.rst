@@ -74,10 +74,11 @@ for employees, shows:
 - **Stages and order count**: Displays the progress of orders across stages such as `To prepare`,
   `Ready`, and `Completed`, along with the number of orders in each stage.
 - **Ordered products by category**: Lists all items in progress, grouped by POS categories (e.g.,
-  `Drinks`, `Food`).
+  `Drinks`, `Food`, :doc:`Preset <presets>`).
 - **Order cards**: Summarizes individual orders, including:
 
   - Associated tables and order numbers.
+  - :doc:`Preset <presets>` service types, if configured.
   - Status, such as `Ready`, highlighted with the defined colors.
   - Waiting time, with visual indicators.
 

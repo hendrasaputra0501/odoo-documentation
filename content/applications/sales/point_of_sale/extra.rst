@@ -10,4 +10,5 @@ Extra features
    extra/employee_login
    extra/preparation
    extra/self_order
+   extra/presets
    extra/pricing

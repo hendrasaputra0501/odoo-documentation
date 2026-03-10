@@ -88,7 +88,8 @@ Additional settings
    .. tab:: Service location and payment options
 
       - Set where the service occurs by selecting :guilabel:`Table` or :guilabel:`Pickup zone`
-        under the :guilabel:`Service` field.
+        under the :guilabel:`Service` field. Service zones can also be defined when configuring
+        :doc:`presets <presets>`.
       - Define when and how customers pay in the :guilabel:`Pay after` field. Customers can pay
         after :guilabel:`Each meal` or for :guilabel:`Each order`.
       - The service location and payment options available depend on the type of self-ordering
@@ -179,6 +180,8 @@ settings are applied correctly. Click :icon:`fa-arrow-right` :guilabel:`Preview 
 under the :guilabel:`Self  Ordering` field to ensure all :ref:`additional settings
 <pos/self_order/add-settings>` are correctly applied.
 
+.. _extra/self_order/usage-guidelines:
+
 Usage guidelines
 ================
 
@@ -211,6 +214,7 @@ Usage guidelines
            POS card.
          - Click :guilabel:`Open Kiosk` on the POS card to reopen the self-ordering interface in a new
            tab or to refresh the kiosk's IoT Box touchscreen display if it is already running.
+         - Configure :doc:`presets <presets>` to streamline the ordering process.
 
       On the customers' end,
 
