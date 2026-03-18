@@ -26,6 +26,8 @@ content by establishing clear relationships between related articles.
    To create a nested article, hover over an article in the sidebar tree and click the
    :icon:`fa-plus` :guilabel:`(plus)` icon.
 
+.. _knowledge/articles_editing/from-scratch:
+
 From scratch
 ------------
 
@@ -44,6 +46,8 @@ suggested options:
 .. tip::
    After writing the header, click on :guilabel:`Untitled` in the top bar to automatically name the
    article after the header. This action does not apply if the article is already titled.
+
+.. _knowledge/articles_editing/from-template:
 
 From a template
 ---------------

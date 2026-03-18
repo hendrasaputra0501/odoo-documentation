@@ -136,6 +136,7 @@ taxes grouped by type (:guilabel:`Sales`/:guilabel:`Purchases`).
    reporting/tax_carryover
    reporting/analytic_accounting
    reporting/budget
+   reporting/annual-report
    reporting/intrastat
    reporting/data_inalterability
    reporting/silverfin
