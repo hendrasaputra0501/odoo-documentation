@@ -36,13 +36,19 @@ gets printed upon connection. Keep it for the configuration process.
 To link the printer with Point of Sale, follow the next steps:
 
 #. Go to :menuselection:`Point of Sale --> Configuration --> Settings`.
-#. Scroll down to the :guilabel:`Connected Devices` section and enable :guilabel:`ePos Printers`.
+#. Scroll down to the :guilabel:`Connected Devices` section and enable :guilabel:`ePos Printer`.
 #. Type the printer's IP address in the dedicated field.
 #. Click :guilabel:`Save`.
 
 Enable the :doc:`pos_lna` to allow Point of Sale to communicate directly with the printer on the
 same network. Alternatively, once the printer is connected to Odoo, ensure the connection is
 secure and reliable by generating a :ref:`self-signed certificate <pos/epos-ssc/certificate>`.
+
+.. note::
+   Leave the IP address field empty if using an :ref:`iMin POS device
+   <pos/epos-printers/imin-printer>`, as these devices do not provide an IP address. To ensure the
+   device's printer works correctly, click :guilabel:`Test` under the :guilabel:`ePos Printer`
+   setting, ignore the warning notification, and clik :guilabel:`Save`.
 
 .. seealso::
    - :doc:`pos_lna`
@@ -65,6 +71,40 @@ compatible.
    - When using :doc:`Local Network Access (LNA) <pos_lna>`, the printer must have a **static
      IP address**; otherwise, it may become unreachable. The static IP should be configured
      through the router.
+
+.. _pos/epos-printers/imin-printer:
+
+iMin POS systems
+----------------
+
+`iMin POS devices <https://www.imin.com/products/#desktop>`_ are Android-based systems that combine
+POS management and printing functionality.
+
+.. important::
+   - Odoo is compatible with `Swan 2 <https://www.imin.com/product/swan-2/>`_ and `Falcon 2
+     <https://www.imin.com/product/falcon-2/>`_ POS devices that can only be purchased from `iMin
+     business partners <https://www.imin.com/contact-us/>`_.
+   - `Falcon 2 <https://www.imin.com/product/falcon-2/>`_ users need to ensure the base device is
+     connected to the dock to be able to print receipts.
+   - Install the :ref:`POS iMin module <general/install>` to allow Odoo to recognize the printer
+     during :ref:`configuration <pos/epos-printers/configuration>`.
+   - iMin POS devices are network-based and do not need an IoT system to operate.
+   - Do not use iMin POS devices to print preparation tickets.
+
+To configure an iMin POS device, follow the next steps:
+
+#. Install the latest iMinOS version.
+#. Download and install the Odoo and Android System WebView apps from iMin Store.
+#. Optionally, to install security certificates, go to :menuselection:`Settings --> Security -->
+   More security settings --> Encryption & credentials`, then click :guilabel:`Install a
+   certificate`.
+
+Once the device is set up, :ref:`connect it with the Odoo database
+<pos/epos-printers/configuration>`.
+
+.. tip::
+   To ensure the device's printer works correctly, access the :guilabel:`TestTools` app on the
+   device interface. A test ticket is automatically printed. If not, click :guilabel:`Print`.
 
 .. _pos/epos-printers/iot-supported-printers:
 
