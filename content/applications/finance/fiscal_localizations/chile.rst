@@ -1205,6 +1205,57 @@ original receipt or invoice, partially or fully cancelling the document.
    `Smart tutorial - Electronic invoicing for point of sale
    <https://www.youtube.com/watch?v=B2XuWmtlmno&t=360s>`_.
 
+Factoring
+---------
+
+**Factoring** is a financial strategy where accounts receivable invoices are sold to a factoring 
+company to receive immediate liquidity (less an agreed commission) before the actual due date.
+The **AEC (Archivo Electrónico de Cesión)** is the document that formalizes and registers the 
+assignment of a DTE to a third party (Factoring company) through the SII system.
+
+The module to install in the Odoo database :guilabel: ‘Factoring Extension (l10n_cl_edi_factoring)’
+.. image:: chile/factoring-module.png
+
+**This module supports the next use cases**
+
+- Factoring of sales invoices, *does not apply to tickets (boletas)*
+- Can be multi-currency
+- Does not require CAFs
+- The :abbr: ‘AEC (Archivo Electrónico de Cesión)‘ are created for each document that is factored. 
+If there are multiple documents to factor, they can be selected in list mode and the XML will be 
+generated massively for each invoice.
+
+..important::
+The module supports the flow for companies trespassing their invoices to a third party owner, and not 
+companies acquiring the ownership of the invoices.
+
+Required Configurations
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In :menuselection: Accounting → Configuration → Settings → Chilean Localization, the next fields are 
+available to configure default factoring settings:
+
+- :guilabel: ‘Journal:’ verify that you have a miscellaneous type journal
+- :guilabel: ‘Accounts Receivable:’ accounts receivable that will be pre-selected but can be adapted
+
+For :guilabel: ‘Contacts’, in the *electronic invoicing* tab, select the :guilabel: ‘Factoring Company’ 
+checkbox for the contacts with whom factoring is performed, that is, to whom the receivable accounts will 
+be assigned.
+
+Use Case
+~~~~~~~~
+
+#. Select an electronic invoice (33) already validated by the SII
+#. Click on the button :guilabel: ‘Create AEC’
+#. This will enable a *pop-up window* where you will specify the contact to whom the account receivable will 
+be assigned to and the date of payment agreed.
+#. A banner will automatically indicate that the document has an *assignment entry*.
+- The entry is posted using the account receivable and the journal configured in past steps.
+#. To generate and send the AEC, click on the **“Send now to the SII”** button.
+#. After sending, click on the **“Ask for Status”** button and the SII will return its validation.
+#. Once the assignment entry is accepted, the original customer's invoice is reflected as **“Paid”** and the 
+reference for this payment is the assignment entry already accepted by the SII.
+
 Financial reports
 =================
 
