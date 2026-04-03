@@ -21,9 +21,12 @@ Configuration --> Point of Sales` and click :guilabel:`New`. Then, configure the
    Click :guilabel:`Configurations > Settings` to access more settings.
 
 .. important::
-   Assign a dedicated :doc:`cash payment method <../point_of_sale/payment_methods>` and :ref:`cash
-   journal <accounting/journals/cash>` to each POS. This ensures that accounting entries are
-   separated and traceable to specific points of sale.
+   - To prevent the POS database tab from becoming unresponsive, disable the `Memory Saver
+     <https://support.google.com/chrome/answer/12929150?hl=en#zippy=%2Cturn-memory-saver-on-or-off>`_
+     setting in Google Chrome. This action ensures the database tab does not slow down.
+   - Assign a dedicated :doc:`cash payment method <../point_of_sale/payment_methods>` and :ref:`cash
+     journal <accounting/journals/cash>` to each POS. This ensures that accounting entries are
+     separated and traceable to specific points of sale.
 
 .. _pos/use/settings:
 
