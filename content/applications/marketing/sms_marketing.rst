@@ -51,6 +51,20 @@ rate)` outcomes.
       In some countries with stricter regulations, the out-of-the-box solution proposed by Odoo may
       not work. In this case, you can use our Twilio integration to send SMS worldwide.
 
+Configuration
+=============
+
+First-time users of the SMS service must register an :abbr:`IAP (In-app purchases)` account and
+purchase the required credits needed to send SMS messages.
+
+SMS account registration
+------------------------
+
+
+Purchase credits
+----------------
+
+
 SMS marketing dashboard
 =======================
 
