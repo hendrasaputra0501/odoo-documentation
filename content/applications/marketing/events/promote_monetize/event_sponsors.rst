@@ -57,6 +57,7 @@ On the form are multiple fields to configure the sponsor's contact details and t
 - :guilabel:`Event`: Specific event to be sponsored.
 - :guilabel:`Sponsorship Level`: Tier or level of sponsorship.
 - :guilabel:`Sponsor Type`: Type of participation of the sponsor during the event.
+- :guilabel:`Show on ticket`: Option to display sponsor logos on attendees' registration tickets.
 
 To start, enter a name for the sponsor under the :guilabel:`Sponsor Name` field.
 
@@ -94,10 +95,10 @@ Odoo **Events** supports three sponsor types:
   Selecting this option creates a :guilabel:`Display in footer` toggle button on the form. The
   footer logo is displayed **only if** this button is toggled.
 - :guilabel:`Exhibitor`: Features the sponsor as an exhibitor on the event webpage under the
-  *Exhibitors* sub-menu.
+  *Exhibitors list* sub-menu item.
 - :guilabel:`Online Exhibitor`: Features the sponsor as an online exhibitor on the event webpage
-  under the *Exhibitors* sub-menu, similar to the :guilabel:`Exhibitor` option. However, this option
-  also displays a *Connect* button when hovering over the sponsor's thumbnail. When clicked,
+  under the *Exhibitors list* sub-menu, similar to the :guilabel:`Exhibitor` option. However, this
+  option also displays a *Connect* button when hovering over the sponsor's thumbnail. When clicked,
   attendees can connect with the sponsor online through their contact details.
 
 .. note::
@@ -108,8 +109,8 @@ If the :guilabel:`Exhibitor` or :guilabel:`Online Exhibitor` option is selected,
 :guilabel:`Description` tab appears at the bottom of the sponsor form. Enter a description for the
 sponsor to be displayed on the sponsor's webpage.
 
-Additionally, for the :guilabel:`Online Exhibitor` option, a :guilabel:`Online` tab appears at the
-bottom for the user to configure their *Jitsi* integration.
+Finally, if the :guilabel:`Show on ticket` option is selected, registration tickets display the
+logos of published sponsors for the event.
 
 Publish an event sponsor
 ========================
@@ -129,20 +130,20 @@ For the :guilabel:`Exhibitor` or :guilabel:`Online Exhibitor` options, click on 
 top-right to publish the sponsor page.
 
 To see the published list of sponsors on the website, navigate to :menuselection:`Website app -->
-Events sub-header`. Then, click on the relevant event. In the sub-menu, click on
-:guilabel:`Exhibitors` to see the list of published sponsors.
+Events sub-menu item`. Then, click on the relevant event. In the sub-menu, click on
+:guilabel:`Exhibitors list` to see the list of published sponsors.
 
 .. image:: event_sponsors/event-exhibitors.png
     :alt: Event exhibitors on the website in Odoo Events.
 
 .. note::
-    If the sub-header menu is **not** showing up on the event website, click :guilabel:`Edit` at the
+    If the sub-menu is **not** showing up on the event website, click :guilabel:`Edit` at the
     top-right corner. Then, click into the :guilabel:`Customize` tab of the sidebar.
 
     In the :guilabel:`Customize` tab, click the :guilabel:`Sub-menu (Specific)` toggle button and
     click :guilabel:`Save`.
 
-    The website then displays the event sub-header menu with various options.
+    The website then displays the event sub-menu with various options.
 
 .. seealso::
     - :doc:`event_booths`
