@@ -51,7 +51,7 @@ Struktur lengkap modul:
 
    {
        'name': 'Real Estate',
-       'version': '17.0.1.0.0',
+       'version': '16.0.1.0.0',
        'category': 'Real Estate',
        'summary': 'Manajemen Properti Real Estate',
        'description': """

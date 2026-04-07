@@ -149,7 +149,7 @@ Buat file :file:`docker-compose.yml` di direktori :file:`~/odoo-training`:
          - odoo-network
 
      odoo:
-       image: odoo:17.0
+       image: odoo:16.0
        container_name: odoo-training-app
        depends_on:
          - db
@@ -203,7 +203,7 @@ Output yang diharapkan:
 .. code-block:: text
 
    NAME                   IMAGE         COMMAND                  SERVICE   STATUS    PORTS
-   odoo-training-app      odoo:17.0     "/entrypoint.sh odoo"    odoo      running   0.0.0.0:8069->8069/tcp
+   odoo-training-app      odoo:16.0     "/entrypoint.sh odoo"    odoo      running   0.0.0.0:8069->8069/tcp
    odoo-training-db       postgres:15   "docker-entrypoint.s…"   db        running   5432/tcp
 
 Pantau log Odoo untuk memastikan tidak ada error:
