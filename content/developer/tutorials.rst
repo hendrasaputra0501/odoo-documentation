@@ -9,6 +9,7 @@ Tutorials
     :titlesonly:
 
     tutorials/getting_started
+    tutorials/odoo_dashboard_training
     tutorials/discover_js_framework
     tutorials/master_odoo_web_framework
     tutorials/define_module_data
@@ -27,6 +28,15 @@ Tutorials
 
       Develop your own module with the Odoo framework. This step-by-step tutorial is crafted for
       newcomers and any other individual curious about Odoo development.
+
+   .. card:: Training: Membuat Dashboard Odoo dengan Chart.js
+      :target: tutorials/odoo_dashboard_training
+      :tag: Intermediate
+      :large:
+
+      Pelajari cara membangun Dashboard interaktif di Odoo menggunakan OWL Component dan
+      Chart.js. Mulai dari instalasi Docker, konfigurasi VSCode, pembuatan modul Real Estate,
+      hingga Dashboard lengkap dengan filter dinamis.
 
    .. card:: Discover the JavaScript Framework
       :target: tutorials/discover_js_framework
